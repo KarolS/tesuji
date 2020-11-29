@@ -1,0 +1,37 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：連打の歩(２)
+手合割：その他　
+上手の持駒：なし
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・ ・ ・v桂v香|一
+| ・ ・ ・ ・ ・ ・ ・v飛 ・|二
+| ・ ・ ・ ・ ・ ・v歩 ・v歩|三
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|四
+| ・ ・ ・ ・ ・ ・ 銀v角 ・|五
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|六
+| ・ ・ ・ ・ ・ ・ 歩 ・ 歩|七
+| ・ ・ ・ ・ ・ ・ ・ 飛 ・|八
+| ・ ・ ・ ・ ・ ・ ・ 桂 香|九
++---------------------------+
+下手の持駒：歩二　
+下手番
+下手：歩の手筋
+上手：連打の歩(２)
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Successive pawn drops
+*Think what you can do if you have only two pawns in hand.
+   1 ２三歩打     ( 0:01/00:00:01)
+*First, attack the rook with a pawn from the front.
+   2 同　飛(22)   ( 0:01/00:00:01)
+*If the rook escapes, the bishop will be taken, so △Rx2c is the only move.
+   3 ２四歩打     ( 0:01/00:00:02)
+*Attack it with a pawn again.
+   4 ２二飛(23)   ( 0:02/00:00:03)
+*This time, the silver is protecting the pawn, so the rook can only escape.
+   5 ２五飛(28)   ( 0:03/00:00:05)
+*Now the bishop can be simply taken and Black has an advantage.
+   6 中断         ( 0:02/00:00:05)
+まで5手で中断

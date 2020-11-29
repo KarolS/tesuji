@@ -1,0 +1,42 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：たたきの歩(２)
+手合割：その他　
+上手の持駒：歩　
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・ ・v銀v桂v香|一
+| ・ ・ ・ ・ ・ ・v金v角 ・|二
+| ・ ・ ・ ・ ・ ・v歩 ・v歩|三
+| ・ ・ ・ ・ ・v歩 ・ ・ ・|四
+| ・ ・ ・ ・ ・ ・ 金 ・ ・|五
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|六
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|七
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|八
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|九
++---------------------------+
+下手の持駒：歩二　
+下手番
+下手：歩の手筋
+上手：たたきの歩(２)
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Striking pawn (2)
+*There is a saying: "lure the gold diagonally".
+*The diagram shows the pawn tesuji that executes that idea.
+   1 ２三歩打     ( 0:02/00:00:02)
+*First, attack the bishop with a pawn drop in front of it.
+*This is an aggressive move, as the bishop has nowhere to escape.
+   2 同　金(32)   ( 0:01/00:00:01)
+*There is no way but to take the pawn with the gold.
+*First, the gold moves diagonally forward.
+   3 ２四歩打     ( 0:01/00:00:03)
+*Then, we attack it with a pawn from the front.
+   4 １四金(23)   ( 0:01/00:00:02)
+*The gold cannot move diagonally backwards, but can only escape forward.
+   5 ２三歩成(24) ( 0:02/00:00:05)
+*Now Black surely wins. The bishop has nowhere to escape.
+*This tesuji skillfully exploited the traits of the gold.
+*After ▲P*2c and △Gx2c, attack from the front with ▲P*2d. Please memorise this line of attack. It will come in handy during your games.
+   6 中断         ( 1:26/00:01:28)
+まで5手で中断

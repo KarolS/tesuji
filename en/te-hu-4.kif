@@ -1,0 +1,35 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：たたきの歩(４)
+手合割：その他　
+上手の持駒：歩二　
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・v金 ・ ・v香|一
+| ・ ・ ・ ・ ・v銀v玉 ・ ・|二
+| ・ ・ ・ ・ ・v金v桂v歩 ・|三
+| ・ ・ ・ ・ ・v歩v歩 ・v歩|四
+| ・ ・ ・ ・ ・ ・ ・ 歩 ・|五
+| ・ ・ ・ ・ ・ 歩 歩 ・ ・|六
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|七
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|八
+| ・ ・ ・ ・ ・ ・ ・ ・ 香|九
++---------------------------+
+下手の持駒：飛　歩　
+下手番
+下手：歩の手筋
+上手：たたきの歩(４)
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Striking pawn (4)
+*At the first glance, being surrounded by three generals seems to be solid, but that's a misconception.
+*If you attack the weak point, the defense will easily collapse.
+   1 １二歩打     ( 0:01/00:00:01)
+*First, with ▲P*1b the pawn strikes at the lance.
+   2 同　香(11)   ( 0:00/00:00:00)
+*The lance cannot do anything else, so it simply takes it with △Lx1b.
+   3 １一飛打     ( 0:01/00:00:02)
+*Then you quickly drop the rook in the now empty square.
+*If they try protecting the lance with △K-2b, then you can take the gold with ▲Rx4a+.
+   4 中断         ( 0:01/00:00:01)
+まで3手で中断

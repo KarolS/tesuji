@@ -1,0 +1,35 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：たたきの歩(５)
+手合割：その他　
+上手の持駒：歩　
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・ ・ ・v桂v香|一
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|二
+| ・ ・ ・ ・ ・v銀v角 ・ ・|三
+| ・ ・ ・ ・ ・v歩v歩v歩v歩|四
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|五
+| ・ ・ ・ ・ ・ 歩 歩 ・ 歩|六
+| ・ ・ ・ ・ ・ ・ 桂 ・ ・|七
+| ・ ・ ・ ・ ・ ・ ・ 飛 ・|八
+| ・ ・ ・ ・ ・ ・ ・ ・ 香|九
++---------------------------+
+下手の持駒：歩　
+下手番
+下手：歩の手筋
+上手：たたきの歩(５)
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Striking pawn (5)
+*It is a tesuji that is often seen in the battle of Static Rook vs 4th File Rook.
+   1 ２二歩打     ( 0:02/00:00:02)
+*A good move would be to attack the knight from the front.
+   2 同　角(33)   ( 0:01/00:00:01)
+*If it was ignored, you can take the knight with ▲Px2a+, so they take it with △Bx2b.
+*If the knight escaped with △N-1c, with ▲P-2a+ Black has an advantage.
+   3 ２四飛(28)   ( 0:01/00:00:03)
+*The rook moves forward and Black has an advantage.
+*White has no way to prevent the upcoming ▲R-2c+.
+   4 中断         ( 0:02/00:00:03)
+まで3手で中断

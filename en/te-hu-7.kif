@@ -1,0 +1,40 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：連打の歩
+手合割：その他　
+上手の持駒：なし
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・ ・ ・ ・v香|一
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|二
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|三
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|四
+| ・ ・ ・ ・ ・ ・ ・ 銀 ・|五
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|六
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|七
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|八
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|九
++---------------------------+
+下手の持駒：歩三　
+下手番
+下手：歩の手筋
+上手：連打の歩
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Successive pawn drops
+*Successive pawn drops is a tesuji combining multiple striking pawns.
+*Think of it as a series of the striking pawn tesuji.
+   1 １二歩打     ( 0:01/00:00:01)
+*First, we attack the lance from the front.
+   2 同　香(11)   ( 0:01/00:00:01)
+*There is no reason to not take it, so △Lx1b captures.
+   3 １三歩打     ( 0:01/00:00:02)
+*Attack with a pawn again.
+   4 同　香(12)   ( 0:00/00:00:01)
+*Capturing with △Lx1c is again the only move.
+   5 １四歩打     ( 0:01/00:00:03)
+*Finally, attack the lance once more.
+*Now if White captures the pawn with △Lx1d, you can take the lance with the silver ▲Sx1d.
+*This way, successive pawn drops always allows Black to capture and important piece.
+   6 中断         ( 0:01/00:00:02)
+まで5手で中断

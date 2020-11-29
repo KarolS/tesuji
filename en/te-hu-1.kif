@@ -1,0 +1,40 @@
+# ----  柿木将棋V V5.00 棋譜ファイル  ----
+ファイル名：たたきの歩
+手合割：その他　
+上手の持駒：歩　
+  ９ ８ ７ ６ ５ ４ ３ ２ １
++---------------------------+
+| ・ ・ ・ ・ ・ ・ ・v桂v香|一
+| ・ ・ ・ ・ ・v銀v玉 ・ ・|二
+| ・ ・ ・ ・ ・v歩v歩 ・v歩|三
+| ・ ・ ・ ・ ・ ・ ・v歩 ・|四
+| ・ ・ ・ ・ ・ ・ 銀 ・ ・|五
+| ・ ・ ・ ・ ・ ・ ・ ・ ・|六
+| ・ ・ ・ ・ ・ 歩 歩 ・ 歩|七
+| ・ ・ ・ ・ ・ ・ ・ 飛 ・|八
+| ・ ・ ・ ・ ・ ・ ・ 桂 香|九
++---------------------------+
+下手の持駒：歩　
+下手番
+下手：歩の手筋
+上手：たたきの歩
+手数----指手---------消費時間--
+*Pawn Tesuji
+*
+*Striking pawn
+*It is the easiest tesuji, and a powerful one.
+*In the diagram above, it seems you can easily break into the second rank, but if you make a mistake, you will suffer losses.
+   1 ２二歩打     ( 0:01/00:00:01)
+*This pawn is a striking pawn.
+*Here, even if you play ▲S-2d, you will lose after △P*2b.
+*After that, ▲P*2c is followed by △S-3a ▲Px2b+, △Sx2b and the silver at 4b joins the defence at 2b. Black has no offense.
+*Therefore, it is a strong move to drop on the place the opponent would want to drop.
+   2 同　玉(32)   ( 0:01/00:00:01)
+*If ignored, you could simply take the knight with ▲P-2a+, so the king has to take the pawn.
+   3 ２四銀(35)   ( 0:01/00:00:02)
+*Now the silver makes the first move.
+*Unlike in the first position, the king is at 2b, so White cannot play P*2b.
+*This way you can break into the second rank. White has no way to defend.
+*The moral of this tesuji is "drop where your opponent wants to drop".
+   4 中断         ( 0:06/00:00:07)
+まで3手で中断

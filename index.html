@@ -1,0 +1,382 @@
+<!doctype html>
+<html dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Shogi Tesuji Collection</title>
+<script src="https://cdn.jsdelivr.net/npm/kifu-for-js@2/bundle/kifu-for-js.min.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="lang-en.js"></script>
+<script src="lang-pl.js"></script>
+<script src="lang-ja.js"></script>
+<script src="notations.js"></script>
+
+<style>
+.tesuji-name {
+    font-size:16px;
+    padding-right:5px;
+}
+.deco {
+    font-size:xx-large;
+    padding-right:15px;
+    font-family: serif;
+}
+.language-selector {
+    text-align:right;
+}
+#noscript {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: -0vw;
+    top: -0vh;
+    font-size:20pt;
+    z-index: 99999999999999999;
+    background-color: white;
+    text-color: black;
+    text-align: center;
+}
+#next-tesuji-btn {
+    text-align:right;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    <noscript>
+    <div id="noscript">
+    This page really requires JavaScript.
+    <br/>
+    このページにはJavaScriptが本当に必要です。
+    <br/>
+    Ta strona naprawdę wymaga JavaScriptu.
+    </div>
+    </noscript>
+    <div class="language-selector">
+        <p>
+        <a class="btn btn-default" onclick="setLanguage('en')">English</a>
+        <a class="btn btn-default" onclick="setLanguage('pl')">polski</a>
+        <a class="btn btn-default" onclick="setLanguage('ja')">日本語</a>
+        </p>
+    </div>
+    <div id="tesuji-menu">
+        <h1 id="main-header"></h1>
+        <table style="border:0px">
+        <tr>
+        <td class="deco">
+        歩
+        </td>
+        <td>
+        <a class="btn btn-default hu-header" onclick="goToSubmenu('hu')">hu</a>
+        </td>
+        </tr>
+        
+        <tr>
+        <td class="deco">
+        香桂
+        </td>
+        <td>
+        <a class="btn btn-default kyokei-header" onclick="goToSubmenu('kyokei')">kyokei</a>
+        </td>
+        </tr>
+        
+        <tr>
+        <td class="deco">
+        銀金
+        </td>
+        <td>
+        <a class="btn btn-default ginkin-header" onclick="goToSubmenu('ginkin')">ginkin</a>
+        </td>
+        </tr>
+        
+        <tr>
+        <td class="deco">
+        角飛
+        </td>
+        <td>
+        <a class="btn btn-default kakuhi-header" onclick="goToSubmenu('kakuhi')">kakuhi</a>
+        </td>
+        </tr>
+        </table>
+        <div style="margin-top:20px">
+        <p>
+        <label for="notation-selection-list" id="choose-notation-header"></label>
+        <select name="notation-selection-list" id="notation-selection-list" onchange="onNotationChange()">
+          <option selected value="default" id="default-notation-header"></option>
+          <option value="japanese" id="japanese-notation-header"></option>
+          <option value="western" id="western-notation-header"></option>
+          <option value="hodges" id="hodges-notation-header"></option>
+          <option value="hosking" id="hosking-notation-header"></option>
+          <option value="kitao_kawasaki" id="kitao_kawasaki-notation-header"></option>
+          <option value="sasserson" id="sasserson-notation-header"></option>
+        </select> 
+        </p>
+        </div>
+        <div style="margin-top:50px">
+        This page is an adaptation of tesuji found at <a href="http://shogimaze.free.fr/Tesuji-en/tesuji-en.html">http://shogimaze.free.fr/Tesuji-en/tesuji-en.html</a>
+        </div>
+    </div>
+    <div id="tesuji-submenu-hu" class="tesuji-submenu">
+        <p>
+            <a class="btn btn-default return-header" onclick="returnToMenu()"></a>
+        </p>
+        <h2 class="hu-header"></h2>
+        <div id="tesuji-list-hu">
+        </div>
+    </div>
+    <div id="tesuji-submenu-kyokei" class="tesuji-submenu">
+        <p>
+            <a class="btn btn-default return-header" onclick="returnToMenu()"></a>
+        </p>
+        <h2 id="kyo-header"></h2>
+        <div id="tesuji-list-kyo">
+        </div>
+        
+        <h2 id="kei-header"></h2>
+        <div id="tesuji-list-kei">
+        </div>
+        
+    </div>
+    <div id="tesuji-submenu-ginkin" class="tesuji-submenu">
+        <p>
+            <a class="btn btn-default return-header" onclick="returnToMenu()"></a>
+        </p>
+        <h2 id="gin-header"></h2>
+        <div id="tesuji-list-gin">
+        </div>
+        
+        <h2 id="kin-header"></h2>
+        <div id="tesuji-list-kin">
+        </div>
+        
+    </div>
+    <div id="tesuji-submenu-kakuhi" class="tesuji-submenu">
+        <p>
+            <a class="btn btn-default return-header" onclick="returnToMenu()"></a>
+        </p>
+        <h2 id="kaku-header"></h2>
+        <div id="tesuji-list-kaku">
+        </div>
+        
+        <h2 id="hi-header"></h2>
+        <div id="tesuji-list-hi">
+        </div>
+        
+    </div>
+    <div id="tesuji-screen">
+        <p>
+            <a class="btn btn-default return-header"" onclick="goToSubmenu(currentSubmenu)">«</a>
+        </p>
+        <div class="row"> 
+            <div class="col-xs-1">
+                <h3><a class="btn btn-default" id="previous-tesuji-btn" onclick="goPreviousTesuji()">«</a></h3>
+            </div>
+            <div class="col-xs-10">
+                <h3 id="tesuji-name-bar"></h3>
+            </div>
+            <div class="col-xs-1">
+                <h3><a class="btn btn-default" id="next-tesuji-btn" onclick="goNextTesuji()">»</a></h3>
+            </div>
+        </div>
+        <div id="tesuji-widget">
+        </div>
+    </div>
+</div>
+
+<script>
+    var language = 'en';
+    var extension = '.kif';
+    var currentSubmenu = 'hu';
+    var currentTesuji = 'hu-1';
+    var allTesuji = [];
+    var lastLoaded = '';
+    var kifuStore = undefined;
+    var builtinNotation = undefined;
+    var selectedNotationName = 'default';
+    
+    (function(){
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var tokens = cookies[i].trim().split('=');
+            if (tokens[0] === 'notation') {
+                selectedNotationName = tokens[1].trim();
+            }
+        }
+    })();
+    
+    var translations = {};
+    var notations = {};
+    addEnglish();
+    addPolish();
+    addJapanese();
+    addNotations();
+    
+    
+    function loadKifu(id) {
+        $('#tesuji-menu').hide();
+        $('.tesuji-submenu').hide();
+        $('#tesuji-screen').show();
+        $('#tesuji-name-bar').text(getTesujiName(id));
+        
+        history.pushState({}, null, '#'+id);
+        currentTesuji = id;
+        var url = language + "/te-" + id + extension;
+        if (lastLoaded == url) {
+            kifuStore.player.goto(0);
+            return;
+        }
+        console.log("loading " + url);
+        lastLoaded = url;
+        if (kifuStore) {
+            kifuStore.loadFile(url);
+            kifuStore.player.goto(0);
+        } else {
+            KifuForJS.load(url, 'tesuji-widget').then(function (ks) {
+                kifuStore = ks;
+                builtinNotation = kifuStore.player.constructor.moveToReadableKifu;
+                kifuStore.player.constructor.moveToReadableKifu = getCurrentNotation();
+            });
+        }
+    }
+    function goPreviousTesuji() {
+        var i = allTesuji.indexOf(currentTesuji);
+        if (i == 0) {
+            loadKifu(allTesuji[allTesuji.length - 1]);
+        } else if (i - 1 >= 0 && i < allTesuji.length) {
+            loadKifu(allTesuji[i - 1]);
+        }
+    }
+    function goNextTesuji() {
+        var i = allTesuji.indexOf(currentTesuji);
+        if (i == allTesuji.length - 1) {
+            loadKifu(allTesuji[0]);
+        } else if (i >= 0 && i + 1 < allTesuji.length) {
+            loadKifu(allTesuji[i + 1]);
+        }
+    }
+    function returnToMenu() {
+        $('#tesuji-menu').show();
+        $('.tesuji-submenu').hide();
+        $('#tesuji-screen').hide();
+        history.pushState({}, null, '#');
+    }
+    function goToSubmenu(id) {
+        $('#tesuji-menu').hide();
+        $('.tesuji-submenu').hide();
+        $('#tesuji-screen').hide();
+        $('#tesuji-submenu-' + id).show();
+        history.pushState({}, null, '#'+id);
+    }
+    function setLanguage(lang) {
+        language = lang;
+        var l = translations[lang];
+        extension = l.extension;
+        for(var k in l){
+            $("#" + k + "-header").text(l[k]);
+            $("." + k + "-header").text(l[k]);
+        }
+        if (kifuStore && builtinNotation) {
+            kifuStore.player.constructor.moveToReadableKifu = getCurrentNotation();
+        }
+        onHash();
+    }
+    function getCurrentNotation() {
+        var n = selectedNotationName;
+        if (n == 'default') n = translations[language].defaultNotation;
+        return notations[n] || builtinNotation;;
+    }
+    function onNotationChange() {
+        selectedNotationName = $("#notation-selection-list option:selected").val();
+        if (kifuStore && builtinNotation) {
+            kifuStore.player.constructor.moveToReadableKifu = getCurrentNotation();
+        }
+        console.log('selected notation:', selectedNotationName);
+        document.cookie = 'notation=' + selectedNotationName;
+    }
+    function getTesujiName(id) {
+        var split = id.split('-');
+        var piece = split[0];
+        var subId = +split[1];
+        var counter = 1;
+        while (subId > 1) {
+            if (translations.en[piece + '-' + subId]) {
+                break;
+            }
+            counter += 1;
+            subId -= 1;
+        }
+        return translations[language][piece + '-' + subId] + ' (' + counter + ')';
+    }
+    function onHash() {
+        var h = window.location.hash;
+        console.log("hash change: " + h);
+        if (!h || h === '') {
+            returnToMenu();
+        }
+        var name = h.substr(1);
+        if (allTesuji.includes(name)) { 
+            loadKifu(name);
+            return;
+        } else if (name == 'hu' || name == 'kyokei' || name == 'kakuhi' || name == 'ginkin') {
+            goToSubmenu(name);
+            return;
+        }
+        returnToMenu();
+    }
+    $(document).ready(function(){
+        $('#switch-lang-en').click(function () {
+            console.log('English');
+            setLanguage('en');
+        });
+        $('#switch-lang-ja').click(function () {
+            console.log('Japanese');
+            setLanguage('ja');
+        });
+        $('#switch-lang-pl').click(function () {
+            console.log('Polish');
+            setLanguage('pl');
+        });
+        var groups = [['hu', 35], ['kyo', 4], ['kei', 10], ['gin', 8], ['kin', 8], ['kaku', 9], ['hi', 5]];
+        for (var i = 0; i < groups.length; i++) {
+            var piece = groups[i][0];
+            var count = groups[i][1];
+            var submenu = $('#tesuji-list-' + piece);
+            var container = null;
+            var counter = 1;
+            for (var j = 1; j <= count; j++) {
+                var id = piece + '-' + j;
+                allTesuji.push(id);
+                var nextId = piece + '-' + (j+1);
+                if (translations.en[id] || !container) {
+                    counter = 1;
+                    container = $('<p></p>');
+                    $(submenu).append(container);
+                    $(container).append($('<span class="tesuji-name"><span id="' + id + '-header"></span>:</h4>'));
+                }
+                $(container).append('<a class="btn btn-default" id="' + id + '">' + counter + '</a>');
+                counter += 1;
+            }
+        }
+        for (var i = 0; i < allTesuji.length; i++) {
+            (function(tesuji) {
+                $('#'+tesuji).click(function() {
+                    loadKifu(tesuji);
+                });
+            })(allTesuji[i]);
+        }
+        setLanguage('en');
+        $("#notation-selection-list").val(selectedNotationName);
+        returnToMenu();
+        window.onhashchange = onHash;
+        onHash();
+    })();
+</script>
+
+
+</body>
+</html>
